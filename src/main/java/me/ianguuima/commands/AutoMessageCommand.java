@@ -26,7 +26,7 @@ public class AutoMessageCommand implements CommandExecutor {
         if (!(s instanceof Player)) return false;
         Player p = (Player) s;
         if (c.getName().equalsIgnoreCase("automessage")) {
-            if (p.hasPermission("automessage.staff")) {
+            if (!p.hasPermission("automessage.staff")) {
                 p.sendMessage(Lang.getConvertedMessage(Lang.NOPERM));
                 return false;
             }

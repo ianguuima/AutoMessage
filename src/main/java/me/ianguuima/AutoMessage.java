@@ -60,6 +60,7 @@ public class AutoMessage extends JavaPlugin {
         Bukkit.getScheduler().scheduleAsyncRepeatingTask(getInstance(), () -> {
             if (!STATUS) return;
             List<String> lista = getMessageManager().getMessages().stream().map(Message::getMessage).collect(Collectors.toList());
+            if (lista.isEmpty()) return;
             int valor = getRandom().nextInt(lista.size());
             Bukkit.broadcastMessage(lista.get(valor));
         }, 0, 20 * Lang.DELAY);
