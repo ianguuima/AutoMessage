@@ -68,6 +68,10 @@ public class AutoMessageCommand implements CommandExecutor {
                         }
 
                         break;
+                        
+                    default:
+                        p.sendMessage("§7Invalid command/argument, try again!");
+                        break;
                 }
 
             }
