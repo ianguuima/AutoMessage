@@ -1,7 +1,7 @@
 package me.ianguuima.commands;
 
 import me.ianguuima.Lang;
-import me.ianguuima.entity.Message;
+import me.ianguuima.entity.message.Message;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
@@ -50,7 +50,6 @@ public class AutoMessageCommand implements CommandExecutor {
                         String SEPARATOR = "";
 
                         for (Message v : getMessageManager().getMessages()) {
-
                             TextComponent message = new TextComponent(Lang.getConvertedMessage(Lang.SEPARATOR) + v.getId());
                             message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§aMessage: §7"+ v.getMessage() + "\n§aHow to edit: §7/automessage edit " + v.getId() + " <new-message>").create()));
                             message.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/automessage edit "  + v.getId() +  " <new-message>"));

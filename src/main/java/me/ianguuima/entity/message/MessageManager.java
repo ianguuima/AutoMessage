@@ -1,13 +1,16 @@
-package me.ianguuima.entity;
+package me.ianguuima.entity.message;
 
 import me.ianguuima.Lang;
 import me.ianguuima.dao.Dao;
+import me.ianguuima.entity.plugin.SendingType;
 import org.bukkit.configuration.ConfigurationSection;
 
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.List;
+import java.util.stream.Collectors;
 
-import static me.ianguuima.AutoMessage.getInstance;
-import static me.ianguuima.AutoMessage.getRandom;
+import static me.ianguuima.AutoMessage.*;
 
 public class MessageManager implements Dao<Message> {
 
@@ -51,6 +54,26 @@ public class MessageManager implements Dao<Message> {
             messages.add(new Message(Integer.valueOf(s), message));
         }
     }
+
+
+    public List<String> sendingMessagesOrder(){
+        SendingType type = getPluginManager().getPlugin().getType();
+
+
+        if (type == SendingType.RANDOM){
+            return getMessages().stream().map(Message::getMessage).collect(Collectors.toList());
+        }
+
+        if (type == SendingType.ORDER){
+            return getMessages().stream().sorted(Comparator.comparingInt(Message::getId)).map(Message::getMessage).collect(Collectors.toList());
+        }
+
+
+        return null;
+
+
+    }
+
 
     public HashSet<Message> getMessages() {
         return messages;

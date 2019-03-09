@@ -1,4 +1,4 @@
-package me.ianguuima.entity;
+package me.ianguuima.entity.message;
 
 import lombok.Getter;
 
