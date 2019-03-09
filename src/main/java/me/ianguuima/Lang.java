@@ -13,9 +13,11 @@ public class Lang {
 
     public static Integer DELAY = getInstance().getConfig().getInt("Configuration.interval");
     public static String INSERTED = msg.getString("inserted");
+    public static String NOPERM = msg.getString("noperm");
+    public static String UPDATED = msg.getString("updated");
     public static String SHOWING = msg.getString("List.showing");
     public static String SEPARATOR = msg.getString("List.separator-color");
-    public static String UPDATED = msg.getString("updated");
+
 
     public static String getConvertedMessage(String msg){
         return msg.replace("&", "§");

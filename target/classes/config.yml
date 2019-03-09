@@ -4,6 +4,7 @@ Configuration:
 Language:
   inserted: '&aSUCCESS &8>> &7You inserted a new message with success'
   updated: '&aSUCCESS &8>> &7You updated the message with success!'
+  noperm: '&cERROR &8>> &7Hey... you dont have permission to do this.'
   List:
     showing: '&aExisting Messages: '
     separator-color: '&c'

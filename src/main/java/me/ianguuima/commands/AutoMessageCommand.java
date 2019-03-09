@@ -26,6 +26,10 @@ public class AutoMessageCommand implements CommandExecutor {
         if (!(s instanceof Player)) return false;
         Player p = (Player) s;
         if (c.getName().equalsIgnoreCase("automessage")) {
+            if (p.hasPermission("automessage.staff")) {
+                p.sendMessage(Lang.getConvertedMessage(Lang.NOPERM));
+                return false;
+            }
 
             if (args.length == 0) {
                 p.sendMessage("§c/automessage §8- §7The main command of the plugin");
@@ -68,7 +72,7 @@ public class AutoMessageCommand implements CommandExecutor {
                         }
 
                         break;
-                        
+
                     default:
                         p.sendMessage("§7Invalid command/argument, try again!");
                         break;
