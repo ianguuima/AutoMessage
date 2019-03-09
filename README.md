@@ -1,2 +1,2 @@
 # AutoMessage
-It's a simple automessage plugin.
+It's a simple but otimized automessage plugin.
