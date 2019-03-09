@@ -1,0 +1,11 @@
+Configuration:
+  interval: 10 #Interval that messages will be shown in seconds.
+
+Language:
+  inserted: '&aSUCCESS &8>> &7You inserted a new message with success'
+  updated: '&aSUCCESS &8>> &7You updated the message with success!'
+  List:
+    showing: '&aExisting Messages: '
+    separator-color: '&c'
+
+Messages:

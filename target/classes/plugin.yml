@@ -1,0 +1,12 @@
+name: AutoMessage
+author: zAryon
+description: A simple automessage plugin
+version: 1.0
+main: me.ianguuima.AutoMessage
+commands:
+  automessage:
+    description: Main command, you'll use it for everything.
+    aliases:
+      - am
+      - amsg
+      - automsg
